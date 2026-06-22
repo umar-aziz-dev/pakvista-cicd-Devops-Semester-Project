@@ -3,7 +3,7 @@ name: Development CI Pipeline
 on:
   pull_request:
     branches:
-      - develop
+      - development
 
 jobs:
   build-and-test:
