@@ -48,7 +48,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/pakvista-cicd:dev-latest
             ${{ secrets.DOCKERHUB_USERNAME }}/pakvista-cicd:dev-${{ github.sha }}
 
-      # Step 5 & 6 – Push the fully tagged image to Docker Hub
+      # Steps 5 & 6 – Push the fully tagged image to Docker Hub
       - name: Push Tagged Image to Docker Hub
         uses: docker/build-push-action@v5
         with:
