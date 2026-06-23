@@ -19,10 +19,12 @@ jobs:
         run: npm install --save-dev htmlhint stylelint stylelint-config-standard
 
       - name: Lint HTML with HTMLHint
-        run: npx htmlhint "*.html" --config '{"tagname-lowercase":true,"attr-lowercase":true,"doctype-first":true}'
+        run: npx htmlhint "*.html"
 
       - name: Lint CSS with Stylelint
-        run: npx stylelint "style.css" --config '{"rules":{"color-no-invalid-hex":true,"block-no-empty":true}}'
+        run: |
+          echo '{"rules":{"color-no-invalid-hex":true,"block-no-empty":true}}' > .stylelintrc.json
+          npx stylelint "style.css"
 
       - name: Simulate Parcel Build
         run: echo "Staging build verification complete – all HTML and CSS files passed linting."
